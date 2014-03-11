@@ -3,6 +3,9 @@
     "ruby-install": {
       "locked_version": "0.1.0"
     },
+    "nginx": {
+      "locked_version": "2.4.2"
+    },
     "git": {
       "locked_version": "3.0.0"
     },
@@ -26,6 +29,18 @@
     },
     "yum-epel": {
       "locked_version": "0.3.4"
+    },
+    "apt": {
+      "locked_version": "2.3.8"
+    },
+    "bluepill": {
+      "locked_version": "2.3.1"
+    },
+    "rsyslog": {
+      "locked_version": "1.12.2"
+    },
+    "ohai": {
+      "locked_version": "1.1.12"
     }
   }
 }
