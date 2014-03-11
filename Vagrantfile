@@ -28,6 +28,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # using a specific IP.
   config.vm.network :private_network, ip: "10.0.0.2"
 
+  # Set a hostname
+  config.vm.hostname = "app"
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.roles_path = "roles"
+    chef.add_role("web")
+  end
+
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
