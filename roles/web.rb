@@ -1,6 +1,9 @@
 name 'web'
 description 'Rails server'
-run_list 'recipe[ruby-install::install]'
+run_list(
+  'recipe[ruby-install::install]',
+  'recipe[nginx]'
+)
 
 default_attributes({
   "ruby-install" => {
