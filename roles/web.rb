@@ -2,7 +2,8 @@ name 'web'
 description 'Rails server'
 run_list(
   'recipe[ruby-install::install]',
-  'recipe[nginx]'
+  'recipe[nginx]',
+  'recipe[puma]'
 )
 
 default_attributes({
