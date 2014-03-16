@@ -15,6 +15,10 @@ default_attributes({
           {
             name: "bundler",
             version: "1.5.3"
+          },
+          {
+            name: "puma",
+            version: "2.8.1"
           }
         ]
       }
