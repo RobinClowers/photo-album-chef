@@ -11,7 +11,7 @@ default_attributes({
     rubies: [
       {
         ruby: "ruby 2.1.1",
-        reinstall: true,
+        reinstall: false,
         gems: [
           {
             name: "bundler",
@@ -24,5 +24,8 @@ default_attributes({
         ]
       }
     ]
+  },
+  "puma" => {
+    rubygems_location: "/opt/rubies/ruby-2.1.1/bin"
   }
 })
