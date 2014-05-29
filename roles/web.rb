@@ -18,7 +18,6 @@ default_attributes({
     rubies: [
       {
         ruby: "ruby 2.1.1",
-        reinstall: false,
         gems: [
           {
             name: "bundler",
