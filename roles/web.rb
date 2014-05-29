@@ -7,6 +7,13 @@ run_list(
 )
 
 default_attributes({
+  authorization: {
+    sudo: {
+      groups: ["admin", "wheel", "sysadmin"],
+      users: ["admin"],
+      passwordless: "true"
+    }
+  },
   "ruby-install" => {
     rubies: [
       {
