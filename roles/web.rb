@@ -33,6 +33,6 @@ default_attributes({
     ]
   },
   "puma" => {
-    rubygems_location: "/opt/rubies/ruby-2.1.1/bin"
+    rubygems_location: "/opt/rubies/ruby-2.1.1/bin/gem"
   }
 })
