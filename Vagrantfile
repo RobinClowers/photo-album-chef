@@ -10,11 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "debian"
+  config.vm.box = "spantree/ubuntu-precise-64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://dl.dropboxusercontent.com/s/xymcvez85i29lym/vagrant-debian-wheezy64.box"
+  config.vm.box_url = "https://vagrantcloud.com/spantree/ubuntu-precise-64/version/6/provider/virtualbox.box"
 
   # Enable berkshelf integration
   config.berkshelf.enabled = true
