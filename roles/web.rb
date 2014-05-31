@@ -2,22 +2,32 @@ name 'web'
 description 'Rails server'
 run_list(
   'recipe[ruby-install::install]',
-  'recipe[nginx]'
+  'recipe[nginx]',
+  'recipe[puma]'
 )
 
 default_attributes({
+  authorization: {
+    sudo: {
+      groups: ["admin", "wheel", "sysadmin"],
+      users: ["admin"],
+      passwordless: "true"
+    }
+  },
   "ruby-install" => {
     rubies: [
       {
         ruby: "ruby 2.1.1",
-        reinstall: true,
         gems: [
           {
             name: "bundler",
             version: "1.5.3"
-          }
+          },
         ]
       }
     ]
+  },
+  "puma" => {
+    rubygems_location: "/opt/rubies/ruby-2.1.1/bin/gem"
   }
 })
