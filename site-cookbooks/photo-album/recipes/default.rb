@@ -2,8 +2,20 @@
 # Cookbook Name:: photo-album
 # Recipe:: default
 
+user "deploy"
+user "deploy" do
+  action :lock
+end
+
+directory "/srv/photo_album" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
 puma_config "photo_album" do
-  directory "/srv/app"
+  directory "/srv/photo_album"
   environment 'staging'
   monit true
   logrotate true
