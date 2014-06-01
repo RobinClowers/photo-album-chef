@@ -12,6 +12,9 @@
     "sudo": {
       "locked_version": "2.6.0"
     },
+    "photo-album": {
+      "path": "./site-cookbooks/photo-album"
+    },
     "git": {
       "locked_version": "3.0.0"
     },

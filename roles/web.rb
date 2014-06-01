@@ -3,7 +3,8 @@ description 'Rails server'
 run_list(
   'recipe[ruby-install::install]',
   'recipe[nginx]',
-  'recipe[puma]'
+  'recipe[puma]',
+  'recipe[photo-album]',
 )
 
 default_attributes({
