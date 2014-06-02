@@ -12,6 +12,9 @@
     "sudo": {
       "locked_version": "2.6.0"
     },
+    "ssh-keys": {
+      "locked_version": "1.0.0"
+    },
     "photo-album": {
       "path": "./site-cookbooks/photo-album"
     },
