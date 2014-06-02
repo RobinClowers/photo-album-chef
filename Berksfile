@@ -1,4 +1,4 @@
-site :opscode
+source 'https://api.berkshelf.com'
 
 cookbook 'ruby-install'
 cookbook 'nginx'

@@ -1,64 +1,51 @@
-{
-  "sources": {
-    "ruby-install": {
-      "locked_version": "0.1.0"
-    },
-    "nginx": {
-      "locked_version": "2.4.2"
-    },
-    "puma": {
-      "locked_version": "0.1.4"
-    },
-    "sudo": {
-      "locked_version": "2.6.0"
-    },
-    "ssh-keys": {
-      "locked_version": "1.0.0"
-    },
-    "photo-album": {
-      "path": "./site-cookbooks/photo-album"
-    },
-    "git": {
-      "locked_version": "3.0.0"
-    },
-    "dmg": {
-      "locked_version": "2.2.0"
-    },
-    "build-essential": {
-      "locked_version": "1.4.4"
-    },
-    "windows": {
-      "locked_version": "1.30.0"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.5"
-    },
-    "runit": {
-      "locked_version": "1.5.10"
-    },
-    "yum": {
-      "locked_version": "3.1.2"
-    },
-    "yum-epel": {
-      "locked_version": "0.3.4"
-    },
-    "apt": {
-      "locked_version": "2.3.8"
-    },
-    "bluepill": {
-      "locked_version": "2.3.1"
-    },
-    "rsyslog": {
-      "locked_version": "1.12.2"
-    },
-    "ohai": {
-      "locked_version": "1.1.12"
-    },
-    "monit": {
-      "locked_version": "0.7.1"
-    },
-    "logrotate": {
-      "locked_version": "1.5.0"
-    }
-  }
-}
+DEPENDENCIES
+  nginx
+  photo-album
+    path: site-cookbooks/photo-album
+  puma
+  ruby-install
+  ssh-keys
+  sudo
+
+GRAPH
+  apt (2.4.0)
+  bluepill (2.3.1)
+    rsyslog (>= 0.0.0)
+  build-essential (2.0.2)
+  chef_handler (1.1.6)
+  dmg (2.2.0)
+  git (4.0.2)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    runit (>= 1.0.0)
+    windows (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  logrotate (1.6.0)
+  monit (0.7.1)
+  nginx (2.7.2)
+    apt (~> 2.2)
+    bluepill (~> 2.3)
+    build-essential (~> 2.0)
+    ohai (~> 2.0)
+    runit (~> 1.2)
+    yum-epel (~> 0.3)
+  ohai (2.0.0)
+  photo-album (0.1.0)
+  puma (0.1.4)
+    logrotate (>= 0.0.0)
+    monit (>= 0.0.0)
+  rsyslog (1.12.2)
+  ruby-install (0.1.2)
+    git (>= 0.0.0)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  ssh-keys (1.0.0)
+  sudo (2.6.0)
+  windows (1.31.0)
+    chef_handler (>= 0.0.0)
+  yum (3.2.0)
+  yum-epel (0.3.6)
+    yum (~> 3.0)
