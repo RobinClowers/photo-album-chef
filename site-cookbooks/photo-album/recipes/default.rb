@@ -3,11 +3,33 @@
 # Recipe:: default
 
 user "deploy"
+
 user "deploy" do
   action :lock
 end
 
+directory "/home/deploy" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
 directory "/srv/photo_album" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
+directory "/srv/photo_album/shared" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
+directory "/srv/photo_album/releases" do
   action :create
   owner 'deploy'
   group 'deploy'
