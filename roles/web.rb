@@ -5,6 +5,7 @@ run_list(
   'recipe[nginx]',
   'recipe[puma]',
   'recipe[photo-album]',
+  'recipe[ssh-keys]',
 )
 
 default_attributes({
@@ -30,5 +31,8 @@ default_attributes({
   },
   "puma" => {
     rubygems_location: "/opt/rubies/ruby-2.1.1/bin/gem"
-  }
+  },
+  ssh_keys: {
+    deploy: "deploy",
+  },
 })
