@@ -1,7 +1,9 @@
 DEPENDENCIES
+  apt
   nginx
   photo-album
     path: site-cookbooks/photo-album
+  postgresql
   puma
   ruby-install
   ssh-keys
@@ -31,7 +33,12 @@ GRAPH
     runit (~> 1.2)
     yum-epel (~> 0.3)
   ohai (2.0.0)
+  openssl (1.1.0)
   photo-album (0.1.0)
+  postgresql (3.4.0)
+    apt (>= 1.9.0)
+    build-essential (>= 0.0.0)
+    openssl (>= 0.0.0)
   puma (0.1.4)
     logrotate (>= 0.0.0)
     monit (>= 0.0.0)
