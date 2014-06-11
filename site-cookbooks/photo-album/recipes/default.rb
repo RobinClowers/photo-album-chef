@@ -29,6 +29,20 @@ directory "/srv/photo_album/shared" do
   mode '0755'
 end
 
+directory "/srv/photo_album/shared/tmp" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
+directory "/srv/photo_album/shared/tmp/sockets" do
+  action :create
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
 directory "/srv/photo_album/releases" do
   action :create
   owner 'deploy'
