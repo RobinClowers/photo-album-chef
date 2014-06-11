@@ -6,6 +6,7 @@ run_list(
   'recipe[puma]',
   'recipe[photo-album]',
   'recipe[ssh-keys]',
+  'recipe[postgresql::server]',
 )
 
 default_attributes({
@@ -34,5 +35,10 @@ default_attributes({
   },
   ssh_keys: {
     deploy: "deploy",
+  },
+  postgresql: {
+    password: {
+      postgres: "d4dd6397cf55a4507874c3864f092a8c"
+    }
   },
 })
