@@ -45,3 +45,6 @@ puma_config "photo_album" do
   thread_max 16
   workers 2
 end
+
+package "libmagickwand-dev"
+package "nodejs"
