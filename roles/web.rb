@@ -2,9 +2,9 @@ name 'web'
 description 'Rails server'
 run_list(
   'recipe[ruby-install::install]',
-  'recipe[nginx]',
   'recipe[puma]',
   'recipe[photo-album]',
+  'recipe[nginx]',
   'recipe[ssh-keys]',
   'recipe[postgresql::server]',
 )
@@ -16,6 +16,9 @@ default_attributes({
       users: ["admin"],
       passwordless: "true"
     }
+  },
+  nginx: {
+    default_site_enabled: false,
   },
   "ruby-install" => {
     rubies: [
