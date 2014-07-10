@@ -75,6 +75,17 @@ puma_config "photo_album" do
   workers 2
 end
 
+postgresql_database_user 'photo_album' do
+  password   'asdfasdf'
+  action     :create
+  connection(
+    host:     'localhost',
+    port:     node['postgresql']['config']['port'],
+    username: 'postgres',
+    password: node['postgresql']['password']['postgres']
+  )
+end
+
 file "/etc/nginx/sites-enabled/photo_album" do
   owner 'deploy'
   group 'deploy'
