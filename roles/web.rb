@@ -7,6 +7,7 @@ run_list(
   'recipe[nginx]',
   'recipe[ssh-keys]',
   'recipe[postgresql::server]',
+  'recipe[database::postgresql]',
 )
 
 default_attributes({
