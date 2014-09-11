@@ -3,11 +3,11 @@ description 'Rails server'
 run_list(
   'recipe[ruby-install::install]',
   'recipe[puma]',
-  'recipe[photo-album]',
-  'recipe[nginx]',
-  'recipe[ssh-keys]',
   'recipe[postgresql::server]',
   'recipe[database::postgresql]',
+  'recipe[nginx]',
+  'recipe[photo-album]',
+  'recipe[ssh-keys]',
 )
 
 default_attributes({
