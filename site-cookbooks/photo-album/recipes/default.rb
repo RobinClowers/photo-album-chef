@@ -75,7 +75,7 @@ puma_config "photo_album" do
   workers 2
 end
 
-postgresql_database "photo_album_vagrant" do
+postgresql_database node['photo_album']['database_name'] do
   connection(
     host:     "localhost",
     port:     node["postgresql"]["config"]["port"],

@@ -1,1 +1,1 @@
-default['photo_album']['ruby_version'] = 'ruby 2.1.2'
+default['photo_album']['database_name'] = 'photo_album_production'
