@@ -1,6 +1,7 @@
 name 'web'
 description 'Rails server'
 run_list(
+  'recipe[apt]',
   'recipe[ruby-install::install]',
   'recipe[puma]',
   'recipe[postgresql::server]',
