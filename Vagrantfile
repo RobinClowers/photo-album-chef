@@ -19,29 +19,42 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Enable berkshelf integration
   config.berkshelf.enabled = true
 
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.define "web" do |web|
+    config.vm.network :private_network, ip: "10.0.0.2"
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  config.vm.network :private_network, ip: "10.0.0.2"
+    config.vm.hostname = "web1"
 
-  # Set a hostname
-  config.vm.hostname = "app"
+    config.vm.provision "chef_solo" do |chef|
+      chef.roles_path = "roles"
+      chef.data_bags_path = "./data_bags"
+      chef.add_role("web")
+      chef.json = {
+        authorization: {
+          sudo: {
+            users: ["vagrant"]
+          }
+        },
+      }
+    end
+  end
 
-  config.vm.provision "chef_solo" do |chef|
-    chef.roles_path = "roles"
-    chef.data_bags_path = "./data_bags"
-    chef.add_role("web")
-    chef.json = {
-      authorization: {
-        sudo: {
-          users: ["vagrant"]
-        }
-      },
-    }
+  config.vm.define "utility" do |utility|
+    config.vm.network :private_network, ip: "10.0.0.3"
+
+    config.vm.hostname = "utility1"
+
+    config.vm.provision "chef_solo" do |chef|
+      chef.roles_path = "roles"
+      chef.data_bags_path = "./data_bags"
+      chef.add_role("base")
+      chef.json = {
+        authorization: {
+          sudo: {
+            users: ["vagrant"]
+          }
+        },
+      }
+    end
   end
 
   # Create a public network, which generally matched to bridged network.
