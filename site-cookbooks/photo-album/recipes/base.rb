@@ -60,5 +60,6 @@ directory "/srv/photo_album/shared/log" do
   mode '0755'
 end
 
+package "build-essential"
 package "libmagickwand-dev"
 package "nodejs"

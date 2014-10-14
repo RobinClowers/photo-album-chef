@@ -2,8 +2,8 @@ name 'base'
 description 'Rails infrastructure'
 run_list(
   'recipe[apt]',
-  'recipe[ruby-install::install]',
   'recipe[photo-album::base]',
+  'recipe[ruby-install::install]',
   'recipe[ssh-keys]',
 )
 
