@@ -1,45 +1,20 @@
 name 'web'
 description 'Rails server'
 run_list(
-  'recipe[apt]',
-  'recipe[ruby-install::install]',
+  'role[base]',
   'recipe[puma]',
   'recipe[postgresql::server]',
   'recipe[database::postgresql]',
   'recipe[nginx]',
   'recipe[photo-album]',
-  'recipe[ssh-keys]',
 )
 
 default_attributes({
-  authorization: {
-    sudo: {
-      groups: ["admin", "wheel", "sysadmin"],
-      users: ["admin"],
-      passwordless: "true"
-    }
-  },
   nginx: {
     default_site_enabled: false,
   },
-  "ruby-install" => {
-    rubies: [
-      {
-        ruby: "ruby 2.1.2",
-        gems: [
-          {
-            name: "bundler",
-            version: "1.5.3"
-          },
-        ]
-      }
-    ]
-  },
   "puma" => {
     rubygems_location: "/opt/rubies/ruby-2.1.2/bin/gem"
-  },
-  ssh_keys: {
-    deploy: "deploy",
   },
   postgresql: {
     password: {
