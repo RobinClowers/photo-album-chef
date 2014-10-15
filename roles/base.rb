@@ -3,6 +3,7 @@ description 'Rails infrastructure'
 run_list(
   'recipe[apt]',
   'recipe[photo-album::base]',
+  'recipe[postgresql::client]',
   'recipe[ruby-install::install]',
   'recipe[ssh-keys]',
 )
