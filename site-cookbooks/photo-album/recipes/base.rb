@@ -62,4 +62,5 @@ end
 
 package "build-essential"
 package "libmagickwand-dev"
+package "imagemagick"
 package "nodejs"
