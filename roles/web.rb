@@ -5,6 +5,7 @@ run_list(
   'recipe[puma]',
   'recipe[postgresql::server]',
   'recipe[database::postgresql]',
+  'recipe[redis::install_from_package]',
   'recipe[nginx]',
   'recipe[photo-album]',
 )
