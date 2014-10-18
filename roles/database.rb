@@ -4,7 +4,8 @@ run_list(
   'role[base]',
   'recipe[postgresql::server]',
   'recipe[database::postgresql]',
-  'recipe[redis::install_from_package]',
+  'recipe[redisio]',
+  'recipe[redisio::enable]',
 )
 
 default_attributes({
@@ -13,8 +14,10 @@ default_attributes({
       postgres: "d4dd6397cf55a4507874c3864f092a8c"
     },
   },
-  redis: {
-    address: "0.0.0.0"
+  redisio: {
+    servers: [
+      { port: '6379', address: '0.0.0.0' },
+    ]
   },
 })
 override_attributes({
