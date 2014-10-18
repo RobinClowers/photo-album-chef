@@ -6,6 +6,7 @@ DEPENDENCIES
     path: site-cookbooks/photo-album
   postgresql
   puma
+  redisio
   ruby-install
   ssh-keys
   sudo
@@ -57,6 +58,9 @@ GRAPH
   puma (0.1.4)
     logrotate (>= 0.0.0)
     monit (>= 0.0.0)
+  redisio (2.2.4)
+    build-essential (>= 0.0.0)
+    ulimit (>= 0.1.2)
   rsyslog (1.12.2)
   ruby-install (0.1.2)
     git (>= 0.0.0)
@@ -66,6 +70,7 @@ GRAPH
     yum-epel (>= 0.0.0)
   ssh-keys (1.0.0)
   sudo (2.6.0)
+  ulimit (0.3.2)
   windows (1.31.0)
     chef_handler (>= 0.0.0)
   xfs (1.1.0)
