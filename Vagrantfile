@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       chef.data_bags_path = "./data_bags"
       chef.add_role("web")
       chef.json = {
+        photo_album: {
+          database_name: 'photo_album_vagrant'
+        },
         authorization: {
           sudo: {
             users: ["vagrant"]
@@ -38,6 +41,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       chef.data_bags_path = "./data_bags"
       chef.add_role("base")
       chef.json = {
+        photo_album: {
+          database_name: 'photo_album_vagrant'
+        },
         authorization: {
           sudo: {
             users: ["vagrant"]
