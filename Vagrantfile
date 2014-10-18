@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         },
         authorization: {
           sudo: {
-            users: ["vagrant"]
+            users: ["vagrant", "deploy"]
           }
         },
       }
@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         },
         authorization: {
           sudo: {
-            users: ["vagrant"]
+            users: ["vagrant", "deploy"]
           }
         },
       }
