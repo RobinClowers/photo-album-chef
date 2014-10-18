@@ -13,6 +13,9 @@ default_attributes({
       postgres: "d4dd6397cf55a4507874c3864f092a8c"
     },
   },
+  redis: {
+    address: "0.0.0.0"
+  },
 })
 override_attributes({
   postgresql: {
