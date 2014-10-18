@@ -31,50 +31,23 @@ file "/etc/nginx/sites-enabled/photo_album" do
       access_log /var/log/nginx/nginx.access.log;
       error_log /var/log/nginx/nginx.error.log info;
 
-      if (-f $document_root/maintenance.html) {
-        rewrite  ^(.*)$  /maintenance.html last;
+      location ~ ^/(assets)/  {
+        expires max;
+        add_header  Cache-Control public;
+
+        add_header ETag "";
         break;
       }
 
-      location ~ ^/(assets)/  {
-        root /srv/photo_album/current/public;
-        expires max;
-        add_header  Cache-Control public;
-      }
-
       location / {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
+        proxy_pass  http://photo_album;
+        proxy_redirect     off;
+        proxy_read_timeout 5m;
 
-        if (-f $request_filename) {
-          break;
-        }
-
-        if (-f $request_filename/index.html) {
-          rewrite (.*) $1/index.html break;
-        }
-
-        if (-f $request_filename.html) {
-          rewrite (.*) $1.html break;
-        }
-
-        if (!-f $request_filename) {
-          proxy_pass http://photo_album;
-          break;
-        }
-      }
-
-      # Now this supposedly should work as it gets the filenames
-      # with querystrings that Rails provides.
-      # BUT there's a chance it could break the ajax calls.
-      location ~* \.(ico|css|gif|jpe?g|png)$ {
-         expires max;
-         break;
-      }
-
-      location ~ ^/javascripts/.*\.js$ {
-         expires max;
-         break;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto  http;
       }
 
       # Error pages
@@ -82,6 +55,8 @@ file "/etc/nginx/sites-enabled/photo_album" do
       location = /500.html {
         root /srv/photo_album/current/public;
       }
+
+      try_files $uri @photo_album;
     }
 CONFIG
 end
