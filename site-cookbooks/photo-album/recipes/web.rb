@@ -60,3 +60,16 @@ file "/etc/nginx/sites-enabled/photo_album" do
     }
 CONFIG
 end
+
+file "/etc/nginx/sites-enabled/robinclowers.com" do
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+  content <<-CONFIG
+    server {
+      listen 80 default_server;
+      server_name www.robinclowers.com robinclowers.com;
+      root /srv/robinclowers.com;
+    }
+CONFIG
+end
