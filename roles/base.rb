@@ -20,7 +20,7 @@ default_attributes({
   "ruby-install" => {
     rubies: [
       {
-        ruby: "ruby 2.1.2",
+        ruby: "ruby 2.2.2",
         gems: [
           {
             name: "bundler",
