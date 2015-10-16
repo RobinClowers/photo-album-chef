@@ -1,6 +1,6 @@
 DEPENDENCIES
   apt
-  backup (= 0.0.4)
+  backup (= 1.3.0)
   database
   nginx
   photo-album
@@ -15,13 +15,15 @@ DEPENDENCIES
 GRAPH
   apt (2.4.0)
   aws (2.3.0)
-  backup (0.0.4)
-    build-essential (>= 0.0.0)
+  backup (1.3.0)
+    cron (>= 0.0.0)
+    gem_specific_install (>= 0.0.0)
   bluepill (2.3.1)
     rsyslog (>= 0.0.0)
   build-essential (2.0.2)
   chef-sugar (2.2.0)
   chef_handler (1.1.6)
+  cron (1.7.0)
   database (2.2.0)
     aws (>= 0.0.0)
     mysql (>= 5.0.0)
@@ -29,6 +31,8 @@ GRAPH
     postgresql (>= 1.0.0)
     xfs (>= 0.0.0)
   dmg (2.2.0)
+  gem_specific_install (0.2.4)
+    git (>= 0.0.0)
   git (4.0.2)
     build-essential (>= 0.0.0)
     dmg (>= 0.0.0)
