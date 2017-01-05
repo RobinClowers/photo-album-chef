@@ -21,6 +21,7 @@ default_attributes({
     rubies: [
       {
         ruby: "ruby 2.2.2",
+        ruby: "ruby 2.3.3",
         gems: [
           {
             name: "bundler",
