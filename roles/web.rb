@@ -13,6 +13,6 @@ default_attributes({
     default_site_enabled: false,
   },
   "puma" => {
-    rubygems_location: "/opt/rubies/ruby-2.2.2/bin/gem"
+    rubygems_location: "/opt/rubies/ruby-2.3.3/bin/gem"
   },
 })
