@@ -25,7 +25,7 @@ default_attributes({
         gems: [
           {
             name: "bundler",
-            version: "1.5.3"
+            version: "1.14.3"
           },
         ]
       }
