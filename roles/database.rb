@@ -5,6 +5,7 @@ run_list(
   'recipe[postgresql::server]',
   'recipe[database::postgresql]',
   'recipe[redisio]',
+  'recipe[redisio::install]',
   'recipe[redisio::enable]',
 )
 
@@ -15,6 +16,8 @@ default_attributes({
     },
   },
   redisio: {
+    version: '2.8.24',
+    safe_install: true,
     servers: [
       { port: '6379', address: '0.0.0.0' },
     ]
