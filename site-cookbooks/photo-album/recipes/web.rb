@@ -22,7 +22,7 @@ file "/etc/nginx/sites-enabled/photo_album" do
 
     server {
       listen 80;
-      server_name www.photos.robinclowers.com photos.robinclowers.com;
+      server_name photos-app.robinclowers.com;
 
       keepalive_timeout 5;
 
