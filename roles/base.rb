@@ -13,7 +13,7 @@ default_attributes({
   authorization: {
     sudo: {
       groups: ["admin", "wheel", "sysadmin"],
-      users: ["admin", "deploy"],
+      users: ["admin", "deploy", "robin"],
       passwordless: "true"
     }
   },
